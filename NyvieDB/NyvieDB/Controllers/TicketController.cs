@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using NyvieDB.DTO;
 using NyvieDB.Interfaces;
 using NyvieDB.Models;
-using NyvieDB.Repositories;
 
 namespace NyvieDB.Controllers;
 
@@ -48,47 +47,47 @@ public class TicketController : ControllerBase
 
     public async Task<IActionResult> Cadastrar([FromForm] TicketDTO ticket)
     {
-        
-            if(string.IsNullOrEmpty(ticket.Nome))
-                return BadRequest("O nome do ticket é obrigatório.");
 
-            Ticket novoTicket = new Ticket();
+        if (string.IsNullOrEmpty(ticket.Nome))
+            return BadRequest("O nome do ticket é obrigatório.");
 
-            if(ticket.Imagem != null && ticket.Imagem.Length != 0)
+        Ticket novoTicket = new Ticket();
+
+        if (ticket.Imagem != null && ticket.Imagem.Length != 0)
+        {
+            var extensao = Path.GetExtension(ticket.Imagem.FileName);
+
+            var nomeArquivo = $"{Guid.NewGuid()}{extensao}";
+
+            var pastaRelativa = "wwwroot/imagens";
+            var caminhoPasta = Path.Combine(Directory.GetCurrentDirectory(), pastaRelativa);
+
+            //garentindo que a pasta exista
+            if (!Directory.Exists(caminhoPasta))
+                Directory.CreateDirectory(caminhoPasta);
+
+            var caminhoCompleto = Path.Combine(caminhoPasta, nomeArquivo);
+
+            using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
             {
-                var extensao = Path.GetExtension(ticket.Imagem.FileName); 
-
-                var nomeArquivo = $"{Guid.NewGuid()}{extensao}";
-
-                var pastaRelativa = "wwwroot/imagens";
-                var caminhoPasta = Path.Combine(Directory.GetCurrentDirectory(), pastaRelativa);
-
-                //garentindo que a pasta exista
-                if(!Directory.Exists(caminhoPasta))
-                    Directory.CreateDirectory(caminhoPasta);
-
-                var caminhoCompleto = Path.Combine(caminhoPasta, nomeArquivo);
-
-                using(var stream = new FileStream(caminhoCompleto, FileMode.Create))
-                {
-                    await ticket.Imagem.CopyToAsync(stream);
-                }
-
-                novoTicket.Imagem = nomeArquivo;
+                await ticket.Imagem.CopyToAsync(stream);
             }
 
-            novoTicket.Nome = ticket.Nome;
-            novoTicket.Descricao = ticket.Descricao;
-            novoTicket.Situacao = ticket.Situacao;
-            novoTicket.IdCliente = ticket.IdCliente;
-            novoTicket.IdUsuario = ticket.IdUsuario;
-            novoTicket.IdStatusTicket = ticket.IdStatusTicket;
-            novoTicket.IdPrioridade = ticket.IdPrioridade;
-            novoTicket.IdDepartamento = ticket.IdDepartamento;
+            novoTicket.Imagem = nomeArquivo;
+        }
+
+        novoTicket.Nome = ticket.Nome!;
+        novoTicket.Descricao = ticket.Descricao!;
+        novoTicket.Situacao = ticket.Situacao!;
+        novoTicket.IdCliente = ticket.IdCliente;
+        novoTicket.IdUsuario = ticket.IdUsuario;
+        novoTicket.IdStatusTicket = ticket.IdStatusTicket;
+        novoTicket.IdPrioridade = ticket.IdPrioridade;
+        novoTicket.IdDepartamento = ticket.IdDepartamento;
         try
         {
-            _ticketRepository.Cadastrar(novoTicket);
-            return StatusCode(201, novoTicket);
+            var retorno = _ticketRepository.Cadastrar(novoTicket);
+            return StatusCode(201, retorno);
         }
         catch (Exception error)
         {
@@ -106,7 +105,7 @@ public class TicketController : ControllerBase
             if (ticketBuscado == null)
                 return NotFound("Ticket não encontrado");
 
-            if(!string.IsNullOrEmpty(ticketAtualizado.Nome))
+            if (!string.IsNullOrEmpty(ticketAtualizado.Nome))
                 ticketBuscado.Nome = ticketAtualizado.Nome;
 
             if (!string.IsNullOrEmpty(ticketAtualizado.Descricao))
@@ -155,7 +154,7 @@ public class TicketController : ControllerBase
             {
                 return BadRequest("Erro ao atualizar ticket" + error.Message);
             }
-        
+
         }
         catch (Exception error)
         {

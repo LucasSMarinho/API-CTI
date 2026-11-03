@@ -1,48 +1,3 @@
-/*
-
-
-
-
-Lembrar de trocar o Nome do ticket no Banco de Dados para ser NOT NULL, isto está causando redundâncias
-
---LucasSMarinho
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
@@ -65,7 +20,8 @@ builder.Services.AddScoped<IStatusTicketRepository, StatusTicketRepository>();
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IPrioridadeRepository, PrioridadeRepository>();
-builder.Services.AddScoped<ITicketRepository, TicketRepository>();
+builder.Services.AddScoped<INotificacaoRepository, NotificacaoRepository>();
+
 
 builder.Services.AddAuthentication(options =>
 {

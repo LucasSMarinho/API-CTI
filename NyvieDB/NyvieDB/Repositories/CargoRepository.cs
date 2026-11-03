@@ -30,7 +30,7 @@ public class CargoRepository : ICargoRepository
             {
                 return "Cargo não encontrado!";
             }
-            
+
         }
         catch (Exception error)
         {

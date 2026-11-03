@@ -53,6 +53,7 @@ namespace NyvieDB.Controllers
                     Nome = prioridade.Nome!
                 };
 
+                _prioridadeRepository.Cadastrar(novaPrioridade);
                 return StatusCode(201, prioridade);
             }
             catch (Exception ex)

@@ -1,4 +1,5 @@
-﻿using NyvieDB.BdContext;
+﻿using Microsoft.EntityFrameworkCore;
+using NyvieDB.BdContext;
 using NyvieDB.Interfaces;
 using NyvieDB.Models;
 
@@ -64,7 +65,7 @@ namespace NyvieDB.Repositories
                 {
                     IdTicket = novoTicket.IdTicket,
                     Nome = novoTicket.Nome,
-                    Descricao = novoTicket.Descricao,   
+                    Descricao = novoTicket.Descricao,
                     Situacao = novoTicket.Situacao,
                     Imagem = novoTicket.Imagem,
                     IdCliente = novoTicket.IdCliente,
@@ -107,7 +108,7 @@ namespace NyvieDB.Repositories
 
         public List<Ticket> Listar()
         {
-            return _context.Tickets.OrderBy(t => t.DataHora).OrderBy(t => t.Nome).ToList();
+            return _context.Tickets.OrderBy(t => t.DataHora).OrderBy(t => t.Nome).Include(t => t.IdClienteNavigation).Include(t => t.IdUsuarioNavigation).Include(t => t.IdStatusTicketNavigation).Include(t => t.IdDepartamentoNavigation).Include(t => t.IdPrioridadeNavigation).ToList();
         }
     }
 }

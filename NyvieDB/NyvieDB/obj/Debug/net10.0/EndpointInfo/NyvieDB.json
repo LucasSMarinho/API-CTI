@@ -421,6 +421,91 @@
         }
       }
     },
+    "/api/Notificacao": {
+      "get": {
+        "tags": [
+          "Notificacao"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Notificacao"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificacaoDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificacaoDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificacaoDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Notificacao/{id}": {
+      "get": {
+        "tags": [
+          "Notificacao"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Notificacao"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Prioridade": {
       "get": {
         "tags": [
@@ -1062,19 +1147,66 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/Usuario"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Usuario"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Usuario"
+                "required": [
+                  "Email",
+                  "IdCargo",
+                  "IdDepartamento",
+                  "Nome",
+                  "Senha",
+                  "Telefone"
+                ],
+                "type": "object",
+                "properties": {
+                  "Nome": {
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string"
+                  },
+                  "Senha": {
+                    "type": "string"
+                  },
+                  "Telefone": {
+                    "type": "string"
+                  },
+                  "Imagem": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "IdDepartamento": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "IdCargo": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "Nome": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "Senha": {
+                  "style": "form"
+                },
+                "Telefone": {
+                  "style": "form"
+                },
+                "Imagem": {
+                  "style": "form"
+                },
+                "IdDepartamento": {
+                  "style": "form"
+                },
+                "IdCargo": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -1107,27 +1239,32 @@
             "description": "OK"
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "Usuario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     }
   },
   "components": {
     "schemas": {
-      "Cargo": {
-        "type": "object",
-        "properties": {
-          "idCargo": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "nome": {
-            "maxLength": 150,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "CargoDTO": {
         "required": [
           "nome"
@@ -1183,22 +1320,6 @@
         },
         "additionalProperties": false
       },
-      "Departamento": {
-        "type": "object",
-        "properties": {
-          "idDepartamento": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "nome": {
-            "maxLength": 150,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "DepartamentoDTO": {
         "required": [
           "nome"
@@ -1236,6 +1357,34 @@
           "senha": {
             "minLength": 1,
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "NotificacaoDTO": {
+        "type": "object",
+        "properties": {
+          "dataHora": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoNotificacaoId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "idTicket": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "idUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1308,64 +1457,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "Usuario": {
-        "type": "object",
-        "properties": {
-          "idUsuario": {
-            "maxLength": 40,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
-          "nome": {
-            "maxLength": 150,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
-          "imagem": {
-            "maxLength": 255,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
-          "senha": {
-            "maxLength": 255,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
-          "telefone": {
-            "maxLength": 20,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "maxLength": 150,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
-          "idDepartamento": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "idCargo": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "idCargoNavigation": {
-            "$ref": "#/components/schemas/Cargo"
-          },
-          "idDepartamentoNavigation": {
-            "$ref": "#/components/schemas/Departamento"
-          }
-        },
-        "additionalProperties": false
       }
     },
     "securitySchemes": {
@@ -1394,6 +1485,9 @@
     },
     {
       "name": "Login"
+    },
+    {
+      "name": "Notificacao"
     },
     {
       "name": "Prioridade"

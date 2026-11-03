@@ -1,4 +1,5 @@
-﻿using NyvieDB.BdContext;
+﻿using Microsoft.EntityFrameworkCore;
+using NyvieDB.BdContext;
 using NyvieDB.Interfaces;
 using NyvieDB.Models;
 using NyvieDB.Utils;
@@ -85,12 +86,19 @@ namespace NyvieDB.Repositories
 
             try
             {
+                novoUsuario.IdUsuario = Guid.NewGuid().ToString();
+                novoUsuario.Senha = Criptografia.GerarHash(novoUsuario.Senha)!;
+
                 var usuarioCadastrado = new Usuario
                 {
+                    IdUsuario = novoUsuario.IdUsuario,
                     Nome = novoUsuario.Nome,
                     Email = novoUsuario.Email,
                     Telefone = novoUsuario.Telefone,
-                    Imagem = novoUsuario.Imagem
+                    Imagem = novoUsuario.Imagem,
+                    Senha = novoUsuario.Senha,
+                    IdCargo = novoUsuario.IdCargo,
+                    IdDepartamento = novoUsuario.IdDepartamento
                 };
 
                 _context.Usuarios.Add(usuarioCadastrado);
@@ -123,7 +131,7 @@ namespace NyvieDB.Repositories
 
         public List<Usuario> Listar()
         {
-            return _context.Usuarios.OrderBy(u => u.Nome).OrderBy(u => u.Telefone).OrderBy(u => u.Email).ToList();
+            return _context.Usuarios.OrderBy(u => u.Nome).OrderBy(u => u.Telefone).OrderBy(u => u.Email).Include(u => u.IdCargoNavigation).Include(u => u.IdDepartamentoNavigation).ToList();
         }
     }
 }

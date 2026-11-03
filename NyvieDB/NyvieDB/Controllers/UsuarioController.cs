@@ -4,6 +4,7 @@ using NyvieDB.DTO;
 using NyvieDB.Interfaces;
 using NyvieDB.Models;
 using NyvieDB.Repositories;
+using System.Net.Sockets;
 
 namespace NyvieDB.Controllers
 {
@@ -45,21 +46,64 @@ namespace NyvieDB.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastrar(Usuario usuario)
+        public async Task<IActionResult> Cadastrar([FromForm] UsuarioDTO usuario)
+        {
+
+            if (string.IsNullOrEmpty(usuario.Nome))
+                return BadRequest("O nome do ticket é obrigatório.");
+
+            var novoUsuario = new Usuario();
+
+            if (usuario.Imagem != null && usuario.Imagem.Length != 0)
+            {
+                var extensao = Path.GetExtension(usuario.Imagem.FileName);
+
+                var nomeArquivo = $"{Guid.NewGuid()}{extensao}";
+
+                var pastaRelativa = "wwwroot/imagens";
+                var caminhoPasta = Path.Combine(Directory.GetCurrentDirectory(), pastaRelativa);
+
+                if (!Directory.Exists(caminhoPasta))
+                    Directory.CreateDirectory(caminhoPasta);
+
+                var caminhoCompleto = Path.Combine(caminhoPasta, nomeArquivo);
+
+                using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
+                {
+                    await usuario.Imagem.CopyToAsync(stream);
+                }
+
+                novoUsuario.Imagem = nomeArquivo;
+            }
+
+
+            novoUsuario.Nome = usuario.Nome!;
+            novoUsuario.Email = usuario.Email!;
+            novoUsuario.Senha = usuario.Senha!;
+            novoUsuario.Telefone = usuario.Telefone;
+            novoUsuario.IdDepartamento = usuario.IdDepartamento;
+            novoUsuario.IdCargo = usuario.IdCargo;
+
+
+
+            try
+            {
+                _usuarioRepository.Cadastrar(novoUsuario);
+                return StatusCode(201, novoUsuario);
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(Guid id)
         {
             try
             {
-                var novoUsuario = new Usuario
-                {
-                    Nome = usuario.Nome!,
-                    Telefone = usuario.Telefone,
-                    Email = usuario.Email,
-                    Senha = usuario.Senha,
-                    Imagem = usuario.Imagem,
-                }
-                ;
-                _usuarioRepository.Cadastrar(novoUsuario);
-                return StatusCode(201, novoUsuario);
+                var resultado = _usuarioRepository.Deletar(id);
+                return Ok(resultado);
             }
             catch (Exception error)
             {

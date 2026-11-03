@@ -3784,11 +3784,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\45193262813\\source\\repos\\NyvieDB\\NyvieDB\\NyvieDB.csproj",
+      "projectUniqueName": "C:\\Users\\45193262813\\Desktop\\API CTI\\NyvieDB\\NyvieDB\\NyvieDB.csproj",
       "projectName": "NyvieDB",
-      "projectPath": "C:\\Users\\45193262813\\source\\repos\\NyvieDB\\NyvieDB\\NyvieDB.csproj",
+      "projectPath": "C:\\Users\\45193262813\\Desktop\\API CTI\\NyvieDB\\NyvieDB\\NyvieDB.csproj",
       "packagesPath": "C:\\Users\\45193262813\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\45193262813\\source\\repos\\NyvieDB\\NyvieDB\\obj\\",
+      "outputPath": "C:\\Users\\45193262813\\Desktop\\API CTI\\NyvieDB\\NyvieDB\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

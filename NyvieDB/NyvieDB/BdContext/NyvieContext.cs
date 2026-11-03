@@ -63,16 +63,16 @@ public partial class NyvieContext : DbContext
 
         modelBuilder.Entity<Notificacao>(entity =>
         {
-            entity.HasKey(e => e.IdNotificacao).HasName("PK__Notifica__046D3872CCF09539");
+            entity.HasKey(e => e.IdNotificacao).HasName("PK__Notifica__046D3872DF6D88D2");
 
             entity.Property(e => e.IdNotificacao).HasDefaultValueSql("(newid())");
             entity.Property(e => e.DataHora).HasDefaultValueSql("(getdate())");
 
-            entity.HasOne(d => d.IdTicketNavigation).WithMany(p => p.Notificacaos).HasConstraintName("FK__Notificac__IdTic__2A164134");
+            entity.HasOne(d => d.IdTicketNavigation).WithMany(p => p.Notificacaos).HasConstraintName("FK__Notificac__IdTic__47A6A41B");
 
-            entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.Notificacaos).HasConstraintName("FK__Notificac__IdUsu__29221CFB");
+            entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.Notificacaos).HasConstraintName("FK__Notificac__IdUsu__46B27FE2");
 
-            entity.HasOne(d => d.TipoNotificacao).WithMany(p => p.Notificacaos).HasConstraintName("FK__Notificac__TipoN__2B0A656D");
+            entity.HasOne(d => d.TipoNotificacao).WithMany(p => p.Notificacaos).HasConstraintName("FK__Notificac__TipoN__489AC854");
         });
 
         modelBuilder.Entity<Prioridade>(entity =>
@@ -91,20 +91,20 @@ public partial class NyvieContext : DbContext
 
         modelBuilder.Entity<Ticket>(entity =>
         {
-            entity.HasKey(e => e.IdTicket).HasName("PK__Ticket__4B93C7E752019617");
+            entity.HasKey(e => e.IdTicket).HasName("PK__Ticket__4B93C7E7FF45F3E9");
 
             entity.Property(e => e.IdTicket).HasDefaultValueSql("(newid())");
             entity.Property(e => e.DataHora).HasDefaultValueSql("(getdate())");
 
-            entity.HasOne(d => d.IdClienteNavigation).WithMany(p => p.Tickets).HasConstraintName("FK__Ticket__IdClient__208CD6FA");
+            entity.HasOne(d => d.IdClienteNavigation).WithMany(p => p.Tickets).HasConstraintName("FK__Ticket__IdClient__3E1D39E1");
 
-            entity.HasOne(d => d.IdDepartamentoNavigation).WithMany(p => p.Tickets).HasConstraintName("FK__Ticket__IdDepart__236943A5");
+            entity.HasOne(d => d.IdDepartamentoNavigation).WithMany(p => p.Tickets).HasConstraintName("FK__Ticket__IdDepart__40F9A68C");
 
-            entity.HasOne(d => d.IdPrioridadeNavigation).WithMany(p => p.Tickets).HasConstraintName("FK__Ticket__IdPriori__245D67DE");
+            entity.HasOne(d => d.IdPrioridadeNavigation).WithMany(p => p.Tickets).HasConstraintName("FK__Ticket__IdPriori__41EDCAC5");
 
-            entity.HasOne(d => d.IdStatusTicketNavigation).WithMany(p => p.Tickets).HasConstraintName("FK__Ticket__IdStatus__22751F6C");
+            entity.HasOne(d => d.IdStatusTicketNavigation).WithMany(p => p.Tickets).HasConstraintName("FK__Ticket__IdStatus__40058253");
 
-            entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.Tickets).HasConstraintName("FK__Ticket__IdUsuari__2180FB33");
+            entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.Tickets).HasConstraintName("FK__Ticket__IdUsuari__3F115E1A");
         });
 
         modelBuilder.Entity<TipoNotificacao>(entity =>

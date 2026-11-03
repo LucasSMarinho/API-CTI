@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace NyvieDB.Models;
@@ -18,6 +17,5 @@ public partial class TipoNotificacao
     public string Nome { get; set; } = null!;
 
     [InverseProperty("TipoNotificacao")]
-    [JsonIgnore]
     public virtual ICollection<Notificacao> Notificacaos { get; set; } = new List<Notificacao>();
 }

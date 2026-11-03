@@ -41,17 +41,19 @@ public partial class Usuario
 
     [ForeignKey("IdCargo")]
     [InverseProperty("Usuarios")]
+    [JsonIgnore]
     public virtual Cargo? IdCargoNavigation { get; set; }
 
     [ForeignKey("IdDepartamento")]
     [InverseProperty("Usuarios")]
+    [JsonIgnore]
     public virtual Departamento? IdDepartamentoNavigation { get; set; }
 
     [InverseProperty("IdUsuarioNavigation")]
-    [JsonIgnore]
+    
     public virtual ICollection<Notificacao> Notificacaos { get; set; } = new List<Notificacao>();
 
     [InverseProperty("IdUsuarioNavigation")]
-    [JsonIgnore]
+    
     public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
 }

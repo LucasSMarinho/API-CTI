@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace NyvieDB.Models;
@@ -15,7 +14,7 @@ public partial class Ticket
 
     [StringLength(150)]
     [Unicode(false)]
-    public string? Nome { get; set; }
+    public string Nome { get; set; } = null!;
 
     [StringLength(512)]
     [Unicode(false)]
@@ -65,6 +64,5 @@ public partial class Ticket
     public virtual Usuario? IdUsuarioNavigation { get; set; }
 
     [InverseProperty("IdTicketNavigation")]
-    [JsonIgnore]
     public virtual ICollection<Notificacao> Notificacaos { get; set; } = new List<Notificacao>();
 }
