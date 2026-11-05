@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 namespace NyvieDB.Models;
 
@@ -45,22 +46,27 @@ public partial class Ticket
 
     [ForeignKey("IdCliente")]
     [InverseProperty("Tickets")]
+    [JsonIgnore]
     public virtual Cliente? IdClienteNavigation { get; set; }
 
     [ForeignKey("IdDepartamento")]
     [InverseProperty("Tickets")]
+    [JsonIgnore]
     public virtual Departamento? IdDepartamentoNavigation { get; set; }
 
     [ForeignKey("IdPrioridade")]
     [InverseProperty("Tickets")]
+    [JsonIgnore]
     public virtual Prioridade? IdPrioridadeNavigation { get; set; }
 
     [ForeignKey("IdStatusTicket")]
     [InverseProperty("Tickets")]
+    [JsonIgnore]
     public virtual StatusTicket? IdStatusTicketNavigation { get; set; }
 
     [ForeignKey("IdUsuario")]
     [InverseProperty("Tickets")]
+    [JsonIgnore]
     public virtual Usuario? IdUsuarioNavigation { get; set; }
 
     [InverseProperty("IdTicketNavigation")]

@@ -21,6 +21,7 @@ builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IPrioridadeRepository, PrioridadeRepository>();
 builder.Services.AddScoped<INotificacaoRepository, NotificacaoRepository>();
+builder.Services.AddScoped<ITicketRepository, TicketRepository>();
 
 
 builder.Services.AddAuthentication(options =>
@@ -62,7 +63,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "Nyvie API",
-        Description = "Uma API com catálogo de veiculos",
+        Description = "Uma API conceituada para CTI",
         TermsOfService = new Uri("https://example.com/terms"),
         Contact = new Microsoft.OpenApi.OpenApiContact
         {

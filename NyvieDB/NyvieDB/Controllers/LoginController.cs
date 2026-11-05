@@ -49,7 +49,7 @@ namespace NyvieDB.Controllers
             };
 
                 //2° - Definir chave de acesso ao token
-                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("filmes-chave-autenticacao-webapi-dev"));
+                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("nyvie-chave-autenticacao-webapi-dev"));
 
                 //3° - Definir as credenciais do token (HEADER)
 
@@ -60,16 +60,16 @@ namespace NyvieDB.Controllers
                 var token = new JwtSecurityToken
                 (
                     //emissor do token
-                    issuer: "api_filmes",
+                    issuer: "api_nyvie",
 
                     //destinatário do token
-                    audience: "api_filmes",
+                    audience: "api_nyvie",
 
                     //dados definidos nas claims
                     claims: claims,
 
                     //tempo de expiração do token
-                    expires: DateTime.Now.AddMinutes(5),
+                    expires: DateTime.Now.AddMinutes(10),
 
                     //credenciais do token
                     signingCredentials: creds

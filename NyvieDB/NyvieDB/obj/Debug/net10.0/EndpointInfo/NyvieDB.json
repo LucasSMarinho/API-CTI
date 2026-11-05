@@ -2,7 +2,7 @@
   "openapi": "3.0.4",
   "info": {
     "title": "Nyvie API",
-    "description": "Uma API com catálogo de veiculos",
+    "description": "Uma API conceituada para CTI",
     "termsOfService": "https://example.com/terms",
     "contact": {
       "name": "LucasSMarinho",
