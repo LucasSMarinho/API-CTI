@@ -108,7 +108,14 @@ namespace NyvieDB.Repositories
 
         public List<Ticket> Listar()
         {
-            return _context.Tickets.OrderBy(t => t.DataHora).OrderBy(t => t.Nome).Include(t => t.IdClienteNavigation).Include(t => t.IdUsuarioNavigation).Include(t => t.IdStatusTicketNavigation).Include(t => t.IdDepartamentoNavigation).Include(t => t.IdPrioridadeNavigation).ToList();
+            return _context.Tickets
+                .OrderBy(t => t.DataHora)
+                .OrderBy(t => t.Nome)
+                .Include(t => t.IdClienteNavigation)
+                .Include(t => t.IdUsuarioNavigation)
+                .Include(t => t.IdStatusTicketNavigation)
+                .Include(t => t.IdDepartamentoNavigation)
+                .Include(t => t.IdPrioridadeNavigation).ToList();
         }
     }
 }

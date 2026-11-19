@@ -21,8 +21,8 @@ public class CargoRepository : ICargoRepository
 
             if (cargoBuscado != null)
             {
-                _context.Cargos.Update(cargoAtualizado);
                 cargoBuscado.Nome = cargoAtualizado.Nome == "string" || cargoAtualizado.Nome == "" ? cargoBuscado.Nome : cargoAtualizado.Nome;
+                _context.Cargos.Update(cargoBuscado);
                 _context.SaveChanges();
                 return "Cargo atualizado com sucesso!";
             }

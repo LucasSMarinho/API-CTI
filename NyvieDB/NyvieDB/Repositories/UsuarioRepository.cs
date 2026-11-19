@@ -19,15 +19,16 @@ namespace NyvieDB.Repositories
         {
             try
             {
-                var usuarioUpt = _context.Usuarios.Find(idUsuario);
+                var usuarioUpt = _context.Usuarios.Find(idUsuario.ToString());
 
                 if (usuarioUpt != null)
                 {
-                    usuarioAtualizado.Nome = usuarioUpt.Nome == "string" || usuarioUpt.Nome == "" ? usuarioAtualizado.Nome : usuarioUpt.Nome;
-                    usuarioAtualizado.Senha = usuarioUpt.Senha == "string" || usuarioUpt.Senha == "" ? usuarioAtualizado.Senha : usuarioUpt.Senha;
-                    usuarioAtualizado.Email = usuarioUpt.Email == "string" || usuarioUpt.Email == "" ? usuarioAtualizado.Email : usuarioUpt.Email;
-                    usuarioAtualizado.Telefone = usuarioUpt.Telefone == "string" || usuarioUpt.Telefone == "" ? usuarioAtualizado.Telefone : usuarioUpt.Telefone;
-                    usuarioAtualizado.Imagem = usuarioUpt.Imagem == "string" || usuarioUpt.Imagem == "" ? usuarioAtualizado.Imagem : usuarioUpt.Imagem;
+                    usuarioUpt.Nome = usuarioAtualizado.Nome == "string" || usuarioAtualizado.Nome == "" ? usuarioUpt.Nome : usuarioAtualizado.Nome;
+                    usuarioUpt.Senha = usuarioAtualizado.Senha == "string" || usuarioAtualizado.Senha == "" ? usuarioUpt.Senha : usuarioAtualizado.Senha;
+                    usuarioUpt.Email = usuarioAtualizado.Email == "string" || usuarioAtualizado.Email == "" ? usuarioUpt.Email : usuarioAtualizado.Email;
+                    usuarioUpt.Telefone = usuarioAtualizado.Telefone == "string" || usuarioAtualizado.Telefone == "" ? usuarioUpt.Telefone : usuarioAtualizado.Telefone;
+                    usuarioUpt.Imagem = usuarioAtualizado.Imagem == "string" || usuarioAtualizado.Imagem == "" ? usuarioUpt.Imagem : usuarioAtualizado.Imagem;
+                    _context.Usuarios.Update(usuarioUpt);
                     _context.SaveChanges();
                     return "Usuário atualizado com sucesso.";
                 }
@@ -47,7 +48,7 @@ namespace NyvieDB.Repositories
         {
             try
             {
-                var usuarioBuscado = _context.Usuarios.Find(idUsuario)!;
+                var usuarioBuscado = _context.Usuarios.Find(idUsuario.ToString())!;
                 return usuarioBuscado;
             }
             catch (Exception)
@@ -115,7 +116,7 @@ namespace NyvieDB.Repositories
         {
             try
             {
-                var usuarioDeletado = _context.Usuarios.Find(idUsuario);
+                var usuarioDeletado = _context.Usuarios.Find(idUsuario.ToString());
                 if (usuarioDeletado != null)
                 {
                     _context.Usuarios.Remove(usuarioDeletado);

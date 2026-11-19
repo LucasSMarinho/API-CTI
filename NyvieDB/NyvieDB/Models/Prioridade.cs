@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 namespace NyvieDB.Models;
 
@@ -17,5 +18,6 @@ public partial class Prioridade
     public string Nome { get; set; } = null!;
 
     [InverseProperty("IdPrioridadeNavigation")]
+    [JsonIgnore]
     public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
 }

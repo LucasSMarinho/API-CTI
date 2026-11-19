@@ -97,6 +97,30 @@ namespace NyvieDB.Controllers
             }
         }
 
+        [HttpPut("{id}")]
+        public IActionResult Put(Guid id, UsuarioDTOUpt usuario)
+        {
+            try
+            {
+                var usuarioAtualizado = new Usuario
+                {
+                    Nome = usuario.Nome!,
+                    Email = usuario.Email!,
+                    Senha = usuario.Senha!,
+                    Telefone = usuario.Telefone,
+                    IdDepartamento = usuario.IdDepartamento,
+                    IdCargo = usuario.IdCargo
+                };
+                _usuarioRepository.AtualizarIdUrl(id, usuarioAtualizado);
+                return Ok(usuarioAtualizado);
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error.Message);
+            }
+        }
+
+
         [HttpDelete("{id}")]
         public IActionResult Deletar(Guid id)
         {

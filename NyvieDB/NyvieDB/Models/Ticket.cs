@@ -46,27 +46,22 @@ public partial class Ticket
 
     [ForeignKey("IdCliente")]
     [InverseProperty("Tickets")]
-    [JsonIgnore]
     public virtual Cliente? IdClienteNavigation { get; set; }
 
     [ForeignKey("IdDepartamento")]
     [InverseProperty("Tickets")]
-    [JsonIgnore]
     public virtual Departamento? IdDepartamentoNavigation { get; set; }
 
     [ForeignKey("IdPrioridade")]
     [InverseProperty("Tickets")]
-    [JsonIgnore]
     public virtual Prioridade? IdPrioridadeNavigation { get; set; }
 
     [ForeignKey("IdStatusTicket")]
     [InverseProperty("Tickets")]
-    [JsonIgnore]
     public virtual StatusTicket? IdStatusTicketNavigation { get; set; }
 
     [ForeignKey("IdUsuario")]
     [InverseProperty("Tickets")]
-    [JsonIgnore]
     public virtual Usuario? IdUsuarioNavigation { get; set; }
 
     [InverseProperty("IdTicketNavigation")]
