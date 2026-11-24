@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NyvieDB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0d97a0092dc24ee9e62259f6acd4b588f7c7eba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6832acf8e9512ec729f58a6822e7bf108e5b8a99")]
 [assembly: System.Reflection.AssemblyProductAttribute("NyvieDB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NyvieDB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
