@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9FA334CD-40D2-354F-B16B-7087B8E57008}|NyvieDB\\NyvieDB.csproj|c:\\users\\45193262813\\desktop\\cti\\api cti\\nyviedb\\nyviedb\\repositories\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FA334CD-40D2-354F-B16B-7087B8E57008}|NyvieDB\\NyvieDB.csproj|solutionrelative:nyviedb\\repositories\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9FA334CD-40D2-354F-B16B-7087B8E57008}|NyvieDB\\NyvieDB.csproj|c:\\users\\45193262813\\desktop\\cti\\api cti\\nyviedb\\nyviedb\\interfaces\\inotificacaorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FA334CD-40D2-354F-B16B-7087B8E57008}|NyvieDB\\NyvieDB.csproj|solutionrelative:nyviedb\\interfaces\\inotificacaorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -63,10 +67,6 @@
       "RelativeMoniker": "D:0:0:{9FA334CD-40D2-354F-B16B-7087B8E57008}|NyvieDB\\NyvieDB.csproj|solutionrelative:nyviedb\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FA334CD-40D2-354F-B16B-7087B8E57008}|NyvieDB\\NyvieDB.csproj|c:\\users\\45193262813\\desktop\\cti\\api cti\\nyviedb\\nyviedb\\repositories\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FA334CD-40D2-354F-B16B-7087B8E57008}|NyvieDB\\NyvieDB.csproj|solutionrelative:nyviedb\\repositories\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9FA334CD-40D2-354F-B16B-7087B8E57008}|NyvieDB\\NyvieDB.csproj|c:\\users\\45193262813\\desktop\\cti\\api cti\\nyviedb\\nyviedb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FA334CD-40D2-354F-B16B-7087B8E57008}|NyvieDB\\NyvieDB.csproj|solutionrelative:nyviedb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -102,37 +102,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "INotificacaoRepository.cs",
               "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Interfaces\\INotificacaoRepository.cs",
               "RelativeDocumentMoniker": "NyvieDB\\Interfaces\\INotificacaoRepository.cs",
               "ToolTip": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Interfaces\\INotificacaoRepository.cs",
               "RelativeToolTip": "NyvieDB\\Interfaces\\INotificacaoRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-26T12:57:02.114Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NotificacaoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Repositories\\NotificacaoRepository.cs",
-              "RelativeDocumentMoniker": "NyvieDB\\Repositories\\NotificacaoRepository.cs",
-              "ToolTip": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Repositories\\NotificacaoRepository.cs",
-              "RelativeToolTip": "NyvieDB\\Repositories\\NotificacaoRepository.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAcwCAAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-26T12:56:23.974Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "NotificacaoController.cs",
               "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Controllers\\NotificacaoController.cs",
               "RelativeDocumentMoniker": "NyvieDB\\Controllers\\NotificacaoController.cs",
@@ -140,12 +127,11 @@
               "RelativeToolTip": "NyvieDB\\Controllers\\NotificacaoController.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAiwFIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-26T12:21:38.265Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-26T12:21:38.265Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "NotificacaoDTO.cs",
               "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\DTO\\NotificacaoDTO.cs",
               "RelativeDocumentMoniker": "NyvieDB\\DTO\\NotificacaoDTO.cs",
@@ -153,8 +139,7 @@
               "RelativeToolTip": "NyvieDB\\DTO\\NotificacaoDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-26T12:12:13.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-26T12:12:13.608Z"
             },
             {
               "$type": "Document",
@@ -182,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Ticket.cs",
               "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Models\\Ticket.cs",
               "RelativeDocumentMoniker": "NyvieDB\\Models\\Ticket.cs",
@@ -194,7 +179,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
+              "Title": "TicketRepository.cs",
+              "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Repositories\\TicketRepository.cs",
+              "RelativeDocumentMoniker": "NyvieDB\\Repositories\\TicketRepository.cs",
+              "ToolTip": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Repositories\\TicketRepository.cs",
+              "RelativeToolTip": "NyvieDB\\Repositories\\TicketRepository.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAiwDgAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-17T13:50:24.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NotificacaoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Repositories\\NotificacaoRepository.cs",
+              "RelativeDocumentMoniker": "NyvieDB\\Repositories\\NotificacaoRepository.cs",
+              "ToolTip": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Repositories\\NotificacaoRepository.cs",
+              "RelativeToolTip": "NyvieDB\\Repositories\\NotificacaoRepository.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAcwCAAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T12:56:23.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Models\\Cliente.cs",
               "RelativeDocumentMoniker": "NyvieDB\\Models\\Cliente.cs",
@@ -206,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "TicketDTO.cs",
               "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\DTO\\TicketDTO.cs",
               "RelativeDocumentMoniker": "NyvieDB\\DTO\\TicketDTO.cs",
@@ -218,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TicketController.cs",
               "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Controllers\\TicketController.cs",
               "RelativeDocumentMoniker": "NyvieDB\\Controllers\\TicketController.cs",
@@ -226,12 +236,11 @@
               "RelativeToolTip": "NyvieDB\\Controllers\\TicketController.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAAAowG4AAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-26T11:20:31.15Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-26T11:20:31.15Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "TipoNotificacao.cs",
               "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Models\\TipoNotificacao.cs",
               "RelativeDocumentMoniker": "NyvieDB\\Models\\TipoNotificacao.cs",
@@ -243,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "NyvieDB\\Models\\Usuario.cs",
@@ -251,12 +260,11 @@
               "RelativeToolTip": "NyvieDB\\Models\\Usuario.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAywDYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T13:54:23.637Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-17T13:54:23.637Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Departamento.cs",
               "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Models\\Departamento.cs",
               "RelativeDocumentMoniker": "NyvieDB\\Models\\Departamento.cs",
@@ -268,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Cargo.cs",
               "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Models\\Cargo.cs",
               "RelativeDocumentMoniker": "NyvieDB\\Models\\Cargo.cs",
@@ -280,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Prioridade.cs",
               "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Models\\Prioridade.cs",
               "RelativeDocumentMoniker": "NyvieDB\\Models\\Prioridade.cs",
@@ -292,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "StatusTicket.cs",
               "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Models\\StatusTicket.cs",
               "RelativeDocumentMoniker": "NyvieDB\\Models\\StatusTicket.cs",
@@ -301,18 +309,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-17T13:52:13.195Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "TicketRepository.cs",
-              "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Repositories\\TicketRepository.cs",
-              "RelativeDocumentMoniker": "NyvieDB\\Repositories\\TicketRepository.cs",
-              "ToolTip": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\Repositories\\TicketRepository.cs",
-              "RelativeToolTip": "NyvieDB\\Repositories\\TicketRepository.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAmwB0AAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T13:50:24.069Z"
             },
             {
               "$type": "Document",
@@ -328,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "TicketDTOUpt.cs",
               "DocumentMoniker": "C:\\Users\\45193262813\\Desktop\\CTI\\API CTI\\NyvieDB\\NyvieDB\\DTO\\TicketDTOUpt.cs",
               "RelativeDocumentMoniker": "NyvieDB\\DTO\\TicketDTOUpt.cs",

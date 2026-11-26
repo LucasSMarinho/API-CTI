@@ -48,7 +48,13 @@ namespace NyvieDB.Repositories
         {
             try
             {
-                return _context.Tickets.Find(idTicket)!;
+                return _context.Tickets
+                    .Include(t => t.IdClienteNavigation)
+                    .Include(t => t.IdDepartamentoNavigation)
+                    .Include(t => t.IdPrioridadeNavigation)
+                    .Include(t => t.IdUsuarioNavigation)
+                    .Include(t => t.IdStatusTicketNavigation)
+                    .FirstOrDefault(t => t.IdTicket == idTicket)!;
             }
             catch (Exception)
             {
