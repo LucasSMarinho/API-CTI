@@ -1435,10 +1435,6 @@
       "NotificacaoDTO": {
         "type": "object",
         "properties": {
-          "dataHora": {
-            "type": "string",
-            "nullable": true
-          },
           "tipoNotificacaoId": {
             "type": "string",
             "format": "uuid",

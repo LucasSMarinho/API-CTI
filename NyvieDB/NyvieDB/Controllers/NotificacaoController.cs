@@ -48,15 +48,15 @@ namespace NyvieDB.Controllers
         {
             try
             {
-                var notificacao = new Notificacao
+                var notificacaoCriada = new Notificacao
                 {
-                    IdUsuario = novaNotificacao.IdUsuario,
                     TipoNotificacaoId = novaNotificacao.TipoNotificacaoId,
+                    IdUsuario = novaNotificacao.IdUsuario,
                     IdTicket = novaNotificacao.IdTicket,
-                    Descricao = novaNotificacao.Descricao!,
+                    Descricao = novaNotificacao.Descricao!
                 };
 
-                var resultado = _notificacaoRepository.Cadastrar(novaNotificacao);
+                var resultado = _notificacaoRepository.Cadastrar(notificacaoCriada);
                 return StatusCode(201, resultado);
             }
             catch (Exception error)

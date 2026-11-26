@@ -26,18 +26,11 @@ namespace NyvieDB.Repositories
             }
         }
 
-        public string Cadastrar(NotificacaoDTO novaNotificacao)
+        public string Cadastrar(Notificacao novaNotificacao)
         {
             try
             {
-                var notificacao = new Notificacao
-                {
-                    IdTicket = novaNotificacao.IdTicket,
-                    IdUsuario = novaNotificacao.IdUsuario,
-                    TipoNotificacaoId = novaNotificacao.TipoNotificacaoId,
-                };
-
-                _context.Notificacaos.Add(notificacao);
+                _context.Notificacaos.Add(novaNotificacao);
                 _context.SaveChanges();
                 return "Notificação cadastrada com sucesso!";
             }

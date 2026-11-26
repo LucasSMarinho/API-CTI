@@ -4,8 +4,6 @@ namespace NyvieDB.DTO
 {
     public class NotificacaoDTO
     {
-        public string? DataHora { get; set; }
-
         public Guid? TipoNotificacaoId { get; set; }  
 
         public Guid? IdTicket { get; set; }

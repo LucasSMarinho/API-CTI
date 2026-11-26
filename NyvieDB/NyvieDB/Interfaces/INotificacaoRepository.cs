@@ -5,7 +5,7 @@ namespace NyvieDB.Interfaces
 {
     public interface INotificacaoRepository
     {
-        public string Cadastrar(NotificacaoDTO novaNotificacao);
+        public string Cadastrar(Notificacao novaNotificacao);
 
         public string Deletar(Guid idNotificacao);
 
