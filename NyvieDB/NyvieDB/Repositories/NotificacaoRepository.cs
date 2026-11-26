@@ -1,4 +1,5 @@
-﻿using NyvieDB.BdContext;
+﻿using Microsoft.EntityFrameworkCore;
+using NyvieDB.BdContext;
 using NyvieDB.DTO;
 using NyvieDB.Interfaces;
 using NyvieDB.Models;
@@ -68,7 +69,7 @@ namespace NyvieDB.Repositories
         {
             try
             {
-                return _context.Notificacaos.OrderBy(n => n.IdTicket).OrderBy(n => n.IdUsuario).OrderBy(n => n.DataHora).ToList();
+                return _context.Notificacaos.Include(n => n.TipoNotificacao).OrderBy(n => n.IdTicket).OrderBy(n => n.IdUsuario).OrderBy(n => n.DataHora).ToList();
             }
             catch
             {
