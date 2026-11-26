@@ -1,9 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 
 namespace NyvieDB.Models;
 
@@ -20,10 +19,6 @@ public partial class Ticket
     [StringLength(512)]
     [Unicode(false)]
     public string Descricao { get; set; } = null!;
-
-    [StringLength(10)]
-    [Unicode(false)]
-    public string Situacao { get; set; } = null!;
 
     [Column(TypeName = "datetime")]
     public DateTime DataHora { get; set; }

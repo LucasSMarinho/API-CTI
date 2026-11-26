@@ -782,8 +782,7 @@
                   "IdPrioridade",
                   "IdStatusTicket",
                   "IdUsuario",
-                  "Nome",
-                  "Situacao"
+                  "Nome"
                 ],
                 "type": "object",
                 "properties": {
@@ -791,9 +790,6 @@
                     "type": "string"
                   },
                   "Descricao": {
-                    "type": "string"
-                  },
-                  "Situacao": {
                     "type": "string"
                   },
                   "Imagem": {
@@ -826,9 +822,6 @@
                   "style": "form"
                 },
                 "Descricao": {
-                  "style": "form"
-                },
-                "Situacao": {
                   "style": "form"
                 },
                 "Imagem": {
@@ -905,13 +898,6 @@
           },
           {
             "name": "Descricao",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Situacao",
             "in": "query",
             "schema": {
               "type": "string"

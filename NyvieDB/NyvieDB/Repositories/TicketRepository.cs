@@ -28,7 +28,6 @@ namespace NyvieDB.Repositories
                     ticketBuscado.IdStatusTicket = ticketAtualizado.IdStatusTicket;
                     ticketBuscado.Nome = ticketAtualizado.Nome;
                     ticketBuscado.Descricao = ticketAtualizado.Descricao;
-                    ticketBuscado.Situacao = ticketAtualizado.Situacao;
                     _context.SaveChanges();
                     return "Ticket atualizado com sucesso";
                 }
@@ -66,7 +65,6 @@ namespace NyvieDB.Repositories
                     IdTicket = novoTicket.IdTicket,
                     Nome = novoTicket.Nome,
                     Descricao = novoTicket.Descricao,
-                    Situacao = novoTicket.Situacao,
                     Imagem = novoTicket.Imagem,
                     IdCliente = novoTicket.IdCliente,
                     IdUsuario = novoTicket.IdUsuario,

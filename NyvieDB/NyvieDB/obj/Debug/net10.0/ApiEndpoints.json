@@ -497,11 +497,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Situacao",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "Imagem",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
@@ -570,11 +565,6 @@
       },
       {
         "Name": "Descricao",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Situacao",
         "Type": "System.String",
         "IsRequired": false
       },

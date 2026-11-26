@@ -49,7 +49,6 @@ public partial class Usuario
 
     [InverseProperty("IdUsuarioNavigation")]
     [JsonIgnore]
-    
     public virtual ICollection<Notificacao> Notificacaos { get; set; } = new List<Notificacao>();
 
     [InverseProperty("IdUsuarioNavigation")]

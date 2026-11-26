@@ -11,9 +11,6 @@ namespace NyvieDB.DTO
         [Required(ErrorMessage = "A descrição do ticket é obrigatória.")]
         public string? Descricao { get; set; }
 
-        [Required(ErrorMessage = "A situação do ticket é obrigatória.")]
-        public string? Situacao { get; set; }
-
         public IFormFile? Imagem { get; set; }
 
         [Required(ErrorMessage = "O ID do cliente é obrigatório.")]

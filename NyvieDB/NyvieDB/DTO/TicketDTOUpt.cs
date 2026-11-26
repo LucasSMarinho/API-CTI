@@ -8,8 +8,6 @@ namespace NyvieDB.DTO
 
         public string? Descricao { get; set; }
 
-        public string? Situacao { get; set; }
-
         public IFormFile? Imagem { get; set; }
 
         public Guid? IdCliente { get; set; }

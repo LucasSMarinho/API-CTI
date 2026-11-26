@@ -78,7 +78,6 @@ public class TicketController : ControllerBase
 
         novoTicket.Nome = ticket.Nome!;
         novoTicket.Descricao = ticket.Descricao!;
-        novoTicket.Situacao = ticket.Situacao!;
         novoTicket.IdCliente = ticket.IdCliente;
         novoTicket.IdUsuario = ticket.IdUsuario;
         novoTicket.IdStatusTicket = ticket.IdStatusTicket;
@@ -110,9 +109,6 @@ public class TicketController : ControllerBase
 
             if (!string.IsNullOrEmpty(ticketAtualizado.Descricao))
                 ticketBuscado.Descricao = ticketAtualizado.Descricao;
-
-            if (!string.IsNullOrEmpty(ticketAtualizado.Situacao))
-                ticketBuscado.Situacao = ticketAtualizado.Situacao;
 
             if (ticketAtualizado.Imagem != null && ticketAtualizado.Imagem.Length != 0)
             {
